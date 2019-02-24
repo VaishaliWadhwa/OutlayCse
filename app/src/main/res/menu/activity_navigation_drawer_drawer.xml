@@ -6,7 +6,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/chatter"
-            android:icon="@mipmap/ic_face"
+            android:icon="@drawable/ic_chat"
             android:title="Chatter" />
         <item
             android:id="@+id/reimbursement"

@@ -88,7 +88,8 @@ public class NavigationDrawerActivity extends AppCompatActivity
             Intent intent = new Intent(this,MainActivity.class);
             startActivity(intent);
         } else if (id == R.id.reimbursement) {
-
+            Intent intent = new Intent(this,com.example.vmac.WatBot.com.example.abc.reimbursement.MainActivity.class);
+            startActivity(intent);
         }
 
         /*

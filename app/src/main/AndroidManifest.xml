@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.vmac.WatBot">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -11,6 +12,10 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
 
     <application
         android:allowBackup="true"
@@ -41,6 +46,51 @@
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar"></activity>-->
+
+        <activity android:name="com.example.vmac.WatBot.com.example.abc.reimbursement.MainActivity">
+            <meta-data
+                android:name="com.google.android.gms.vision.DEPENDENCIES"
+                tools:replace="android:value"
+                android:value="ocr" />
+        </activity>
+        <activity
+            android:name="com.example.vmac.WatBot.com.example.abc.reimbursement.MealActivity"
+            android:label="Meal" />
+        <activity
+            android:name="com.example.vmac.WatBot.com.example.abc.reimbursement.ImageToTextConverter"
+            android:label="Scan Here" />
+        <activity
+            android:name="com.example.vmac.WatBot.com.example.abc.reimbursement.MiscellaneousActivity"
+            android:label="Miscellaneous" />
+        <activity
+            android:name="com.example.vmac.WatBot.com.example.abc.reimbursement.TeamExpenseActivity"
+            android:label="Team Expense" />
+        <activity android:name="com.example.abc.reimbursement.ChoiceActivity"
+            android:theme="@style/AppTheme.CustomTheme"/>
+        <activity
+            android:name="com.example.vmac.WatBot.com.example.abc.reimbursement.ExpenseReport"
+            android:label="Expense Report" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                tools:replace="android:value"
+                android:value=".MainActivity" /> </activity>
+        <activity
+            android:name="com.example.vmac.WatBot.com.example.abc.reimbursement.Data.EditorExpense"
+            android:label="Edit"
+            android:theme="@style/AppTheme.CustomTheme" />
+
+
+        <provider
+            android:name="com.example.vmac.WatBot.com.example.abc.reimbursement.Data.BillProvider"
+            android:authorities="com.example.vmac.WatBot.com.example.abc.reimbursement"
+            android:exported="false" />
+
+        <activity android:name="com.example.vmac.WatBot.com.example.abc.reimbursement.LocalTravel" />
+        <activity android:name="com.example.vmac.WatBot.com.example.abc.reimbursement.DistantTravel" />
+        <activity android:name="com.example.vmac.WatBot.com.example.abc.reimbursement.DisplayActivity"
+            android:label="Display"
+            >
+        </activity>
 
     </application>
 

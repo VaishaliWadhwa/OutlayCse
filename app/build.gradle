@@ -5,7 +5,7 @@ android {
     buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "com.example.vmac.chatbot"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -32,7 +32,7 @@ dependencies {
     })
     implementation 'com.android.support:appcompat-v7:26.0.0'
     implementation 'com.android.support:recyclerview-v7:26.0.0'
-    implementation 'com.android.support:design:26.0.0'
+    implementation 'com.android.support:design:26.1.0'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'com.google.code.gson:gson:2.8.0'
     implementation 'com.ibm.watson.developer_cloud:assistant:6.11.0'
@@ -48,12 +48,14 @@ dependencies {
 	
 	    
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-    implementation 'com.google.android.gms:play-services-location:15.0.1'
-    implementation 'com.google.android.gms:play-services-vision:15.0.2'
+    //implementation 'com.google.android.gms:play-services-location:15.0.1'
+    //implementation 'com.google.android.gms:play-services-vision:15.0.2'
 
-    implementation 'com.android.support:support-v7:26.0.0'
+    //implementation 'com.android.support:support-v4:26.0.0'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    
+
 
 
 }
+//apply plugin:'com.google.gms.google-services'
+//com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true

@@ -2,6 +2,7 @@ package com.example.vmac.WatBot;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
@@ -94,6 +95,9 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     mContext = getApplicationContext();
+
+
+
 
     inputMessage = findViewById(R.id.message);
     btnSend = findViewById(R.id.btn_send);

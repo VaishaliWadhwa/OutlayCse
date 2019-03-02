@@ -17,6 +17,7 @@ import android.view.MenuItem;
 
 public class NavigationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,10 @@ public class NavigationDrawerActivity extends AppCompatActivity
         setContentView(R.layout.activity_navigation_drawer);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+        Intent intent = getIntent();
+        user = intent.getStringExtra("user");
 
         /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -86,9 +91,11 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
         if (id == R.id.chatter) {
             Intent intent = new Intent(this,MainActivity.class);
+            intent.putExtra("user", "user");
             startActivity(intent);
         } else if (id == R.id.reimbursement) {
             Intent intent = new Intent(this,com.example.vmac.WatBot.com.example.abc.reimbursement.MainActivity.class);
+            intent.putExtra("user", "user");
             startActivity(intent);
         }
 

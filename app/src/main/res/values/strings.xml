@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">Chatter</string>
+    <string name="app_name">DBUDDY</string>
     <string name="what_s_on_your_mind">Enter your query</string>
-    <string name="title_activity_navigation_drawer">DepartmentBuddy</string>
+    <string name="title_activity_navigation_drawer">ECE Department</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Person Name</string>
+    <string name="nav_header_title">ECE Department</string>
     <string name="nav_header_subtitle">15001003XXX</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>

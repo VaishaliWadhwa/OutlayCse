@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class NavigationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -49,6 +50,10 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View headerView = navigationView.getHeaderView(0);
+        TextView navUserId = (TextView) headerView.findViewById(R.id.user_id);
+        navUserId.setText(user);
     }
 
     @Override
@@ -91,11 +96,11 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
         if (id == R.id.chatter) {
             Intent intent = new Intent(this,MainActivity.class);
-            intent.putExtra("user", "user");
+            intent.putExtra("user", user);
             startActivity(intent);
         } else if (id == R.id.reimbursement) {
             Intent intent = new Intent(this,com.example.vmac.WatBot.com.example.abc.reimbursement.MainActivity.class);
-            intent.putExtra("user", "user");
+            intent.putExtra("user", user);
             startActivity(intent);
         }
 

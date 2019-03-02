@@ -42,7 +42,10 @@ public class RegisterActivity extends AppCompatActivity {
                 String user = mTextUsername.getText().toString().trim();
                 String pwd = mTextPassword.getText().toString().trim();
                 String cnf_pwd = mTextCnfPassword.getText().toString().trim();
-                if((user !="" || pwd !="")) {
+                Boolean b = (user.equals(""));
+                Boolean c = (pwd.equals(""));
+
+                if(!(b && c)) {
                     if (pwd.equals(cnf_pwd)) {
                         long val = db.addUser(user, pwd);
                         if (val > 0) {

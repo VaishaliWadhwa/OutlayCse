@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(res == true)
                 {
                     Intent HomePage = new Intent(LoginActivity.this,NavigationDrawerActivity.class);
-                    HomePage.putExtra("user", "user");
+                    HomePage.putExtra("user", user);
                     //HomePage.putExtra("expenseName", expenseName);
                     startActivity(HomePage);
                 }

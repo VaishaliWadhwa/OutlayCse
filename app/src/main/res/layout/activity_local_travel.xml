@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:background="#ffffff"
+    android:layout_height="wrap_content"
+    tools:context=".com.example.abc.reimbursement.LocalTravel">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Purpose"
+                android:configChanges="orientation|keyboardHidden"/>
+        </LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+
+            <EditText
+                android:id="@+id/from"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="8dp"
+                android:hint="Source"
+                android:layout_weight="1"
+                android:configChanges="orientation|keyboardHidden"/>
+
+            <EditText
+                android:id="@+id/to"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Destination"
+                android:layout_weight="1"
+                android:configChanges="orientation|keyboardHidden"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+
+            <Button
+                android:id="@+id/travel_button"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Travel"
+                android:layout_weight="1"
+                android:background="#2AB0D9"
+                android:textColor="#ffffff"/>
+
+            <Button
+                android:id="@+id/meal_button"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
+                android:text="Meal"
+                android:layout_weight="1"
+                android:background="#2AB0D9"
+                android:textColor="#ffffff"/>
+
+        </LinearLayout>
+
+        <fragment
+            android:id="@+id/fragment2"
+            class="com.example.abc.reimbursement.LocalTravelMealFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </fragment>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="wrap_content">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Travel"
+        tools:layout_editor_absoluteX="253dp"
+        tools:layout_editor_absoluteY="41dp"
+        android:background="#ffffff">
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_margin="30dp"
+            android:background="#ffffff">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Date"
+                android:id="@+id/bill_date"
+                android:configChanges="orientation|keyboardHidden"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Write Your Purpose"
+                android:id="@+id/purpose"
+                android:configChanges="orientation|keyboardHidden"/>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Scan Your Travel Bill"
+                android:id="@+id/travel_scan" />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Travel Amount"
+                android:id="@+id/travel_amount"
+                android:configChanges="orientation|keyboardHidden"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:text="Had Meal?"
+                    android:textSize="20dp"
+                    android:textColor="#000000"
+                    android:configChanges="orientation|keyboardHidden"/>
+                <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <RadioButton android:id="@+id/radioyes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+
+                        android:paddingRight="40dp"/>
+                    <RadioButton android:id="@+id/radiono"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+
+                        android:paddingRight="40dp"/>
+                </RadioGroup> </LinearLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Meal Scan"
+                android:id="@+id/meal_scan"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Total Meal Amount"
+                android:id="@+id/meal_amount"
+                android:configChanges="orientation|keyboardHidden"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Final Total Amount"
+                android:id="@+id/final_amount"
+                android:configChanges="orientation|keyboardHidden"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Final Submit"
+                android:id="@+id/final_submit"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>-->
+
+

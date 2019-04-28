@@ -90,7 +90,8 @@
             android:name=".com.example.abc.reimbursement.DisplayActivity"
             android:label="Display" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".com.example.abc.reimbursement.AdminApproval"></activity>
     </application>
 
 </manifest>

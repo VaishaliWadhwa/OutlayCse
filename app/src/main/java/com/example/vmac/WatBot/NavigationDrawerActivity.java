@@ -99,9 +99,16 @@ public class NavigationDrawerActivity extends AppCompatActivity
             intent.putExtra("user", user);
             startActivity(intent);
         } else if (id == R.id.reimbursement) {
-            Intent intent = new Intent(this,com.example.vmac.WatBot.com.example.abc.reimbursement.MainActivity.class);
-            intent.putExtra("user", user);
-            startActivity(intent);
+            if(user.equals("csehod@gmail.com")||user.equals("adminblock@gmail.com")){
+                Intent intent = new Intent(this, com.example.vmac.WatBot.com.example.abc.reimbursement.AdminApproval.class);
+                intent.putExtra("user", user);
+                startActivity(intent);
+            }
+            else {
+                Intent intent = new Intent(this, com.example.vmac.WatBot.com.example.abc.reimbursement.MainActivity.class);
+                intent.putExtra("user", user);
+                startActivity(intent);
+            }
         }
 
         /*

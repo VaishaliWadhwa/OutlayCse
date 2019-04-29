@@ -1,6 +1,5 @@
 package com.example.vmac.WatBot.com.example.abc.reimbursement;
 
-import android.app.Dialog;
 import android.app.LoaderManager;
 import android.content.ContentUris;
 import android.content.CursorLoader;
@@ -17,9 +16,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.vmac.WatBot.com.example.abc.reimbursement.Data.BillContract;
-import com.example.vmac.WatBot.com.example.abc.reimbursement.Data.EditorExpense;
 import com.example.vmac.WatBot.R;
+import com.example.vmac.WatBot.com.example.abc.reimbursement.Data.BillContract;
 
 import static com.example.vmac.WatBot.com.example.abc.reimbursement.Data.BillContract.BillEntry._ID;
 
@@ -31,6 +29,8 @@ public class ExpenseReport extends AppCompatActivity implements LoaderManager.Lo
 
     String expenseName;
     String category;
+    String startDate;
+    String endDate;
     String user;
     private static final int EXPENSE_LOADER = 0;
 
@@ -46,6 +46,8 @@ public class ExpenseReport extends AppCompatActivity implements LoaderManager.Lo
         Intent intent = getIntent();
         expenseName = intent.getStringExtra("expenseName");
         category = intent.getStringExtra("category");
+        endDate = intent.getStringExtra("endDate");
+        startDate = intent.getStringExtra("startDate");
         user = intent.getStringExtra("user");
 
 
@@ -188,7 +190,7 @@ public class ExpenseReport extends AppCompatActivity implements LoaderManager.Lo
 
     public void openDialog(){
 
-        ChoiceActivity choiceActivityDialog = new ChoiceActivity(expenseName,user);
+        ChoiceActivity choiceActivityDialog = new ChoiceActivity(expenseName,user,startDate,endDate);
         choiceActivityDialog.show(getSupportFragmentManager(), "Editor Expense Dialog");
 
     }

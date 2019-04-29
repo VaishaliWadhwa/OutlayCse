@@ -26,7 +26,10 @@ import com.example.vmac.WatBot.com.example.abc.reimbursement.Data.BillContract;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class MealActivity extends AppCompatActivity {
     DatePickerDialog.OnDateSetListener mDateSetListener;
@@ -44,6 +47,8 @@ public class MealActivity extends AppCompatActivity {
     String expenseName;
     String category;
     String user;
+    String startDate;
+    String endDate;
 
     private static final int EXPENSE_LOADER = 0;
 
@@ -77,6 +82,9 @@ public class MealActivity extends AppCompatActivity {
         expenseName = intent.getStringExtra("expenseName");
         category = intent.getStringExtra("category");
         user = intent.getStringExtra("user");
+        startDate = intent.getStringExtra("startDate");
+        endDate= intent.getStringExtra("endDate");
+
         mFinalAmountEditText.addTextChangedListener(tw);
 
 
@@ -109,7 +117,28 @@ public class MealActivity extends AppCompatActivity {
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month + 1;
                 String date = dayOfMonth + "/" + month + "/" + year;
-                mDisplayDate.setText(date);
+
+                Date d1 = null;
+                Date d2 = null;
+                Date d3 = null;
+                try {
+                    d2 = new SimpleDateFormat("dd/MM/yyy").parse(startDate);
+                    d1 = new SimpleDateFormat("dd/MM/yyyy").parse(date);
+                    d3 = new SimpleDateFormat("dd/MM/yyyy").parse(endDate);
+                    if (d1.after(d3)) {
+                        Toast.makeText(getApplicationContext(), "Insert date properly", Toast.LENGTH_SHORT).show();
+
+
+                    } else {
+                        mBillDateEditText.setText(date);
+
+
+
+                    }
+
+                } catch (ParseException ex) {
+                }
+
 
             }
         };

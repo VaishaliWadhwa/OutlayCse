@@ -1,23 +1,15 @@
 package com.example.vmac.WatBot.com.example.abc.reimbursement;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.ContentValues;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDialogFragment;
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.example.vmac.WatBot.com.example.abc.reimbursement.Data.BillContract;
 import com.example.vmac.WatBot.R;
 
 public class ChoiceActivity extends AppCompatDialogFragment {
@@ -25,15 +17,20 @@ public class ChoiceActivity extends AppCompatDialogFragment {
 
     String expenseName;
     String user;
+    String startDate;
+    String endDate;
     private RadioGroup mRadioGroup;
 
     public ChoiceActivity() {
     }
 
     @SuppressLint("ValidFragment")
-    public ChoiceActivity(String expense,String u) {
+    public ChoiceActivity(String expense,String u , String startdate , String enddate) {
         expenseName = expense;
         user = u;
+
+        startDate = startdate;
+        endDate = enddate;
     }
 
     @Override
@@ -41,6 +38,7 @@ public class ChoiceActivity extends AppCompatDialogFragment {
         super.onCreate(savedInstanceState);
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
 
         LayoutInflater inflator = getActivity().getLayoutInflater();
         View view = inflator.inflate(R.layout.activity_choice, null);
@@ -53,6 +51,10 @@ public class ChoiceActivity extends AppCompatDialogFragment {
                     intent.putExtra("category", "Meal");
                     intent.putExtra("expenseName", expenseName);
                     intent.putExtra("user", user);
+                    intent.putExtra("endDate",endDate);
+                    intent.putExtra("startDate",startDate);
+
+
                     startActivity(intent);
 
                 }
@@ -61,6 +63,9 @@ public class ChoiceActivity extends AppCompatDialogFragment {
                     intent.putExtra("category", "Local Travel");
                     intent.putExtra("expenseName", expenseName);
                     intent.putExtra("user", user);
+                    intent.putExtra("endDate",endDate);
+                    intent.putExtra("startDate",startDate);
+
                     startActivity(intent);
 
                 }
@@ -69,6 +74,9 @@ public class ChoiceActivity extends AppCompatDialogFragment {
                     intent.putExtra("category", "Distant Travel");
                     intent.putExtra("expenseName", expenseName);
                     intent.putExtra("user", user);
+                    intent.putExtra("endDate",endDate);
+                    intent.putExtra("startDate",startDate);
+
                     startActivity(intent);
 
                 }
@@ -77,6 +85,9 @@ public class ChoiceActivity extends AppCompatDialogFragment {
                     intent.putExtra("category", "Team Expense");
                     intent.putExtra("expenseName", expenseName);
                     intent.putExtra("user", user);
+                    intent.putExtra("endDate",endDate);
+                    intent.putExtra("startDate",startDate);
+
                     startActivity(intent);
 
                 }
@@ -85,6 +96,9 @@ public class ChoiceActivity extends AppCompatDialogFragment {
                     intent.putExtra("category", "Miscellaneous");
                     intent.putExtra("expenseName", expenseName);
                     intent.putExtra("user", user);
+                    intent.putExtra("endDate",endDate);
+                    intent.putExtra("startDate",startDate);
+
                     startActivity(intent);
 
                 }

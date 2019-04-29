@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -18,10 +16,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.vmac.WatBot.R;
 import com.example.vmac.WatBot.com.example.abc.reimbursement.Data.BillContract;
 import com.example.vmac.WatBot.com.example.abc.reimbursement.Data.BillDbHelper;
 import com.example.vmac.WatBot.com.example.abc.reimbursement.Data.EditorExpense;
-import com.example.vmac.WatBot.R;
 
 /**
  * Displays list of pets that were entered and stored in the app.
@@ -88,16 +86,22 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
                 SQLiteDatabase database = mDbHelper.getReadableDatabase();
 
-                String query = "SELECT name FROM Expenses WHERE _id=" + id;
+                String query = "SELECT * FROM Expenses WHERE _id=" + id;
 
                 Cursor  cursor = database.rawQuery(query,null);
                 String expenseName=null;
+                String startDate = null;
+                String endDate = null;
 
                 if (cursor.moveToFirst()) {
                     expenseName = cursor.getString(cursor.getColumnIndex(BillContract.BillEntry.COLUMN_EXPENSE_NAME));
+                    startDate = cursor.getString(cursor.getColumnIndex(BillContract.BillEntry.COLUMN_EXPENSE_STARTDATE));
+                    endDate = cursor.getString(cursor.getColumnIndex(BillContract.BillEntry.COLUMN_EXPENSE_ENDDATE));
                 }
                 intent.putExtra("user", user);
                 intent.putExtra("expenseName", expenseName);
+                intent.putExtra("startDate",startDate);
+                intent.putExtra("endDate",endDate);
                  //String name = adapterView.getItemAtPosition(position).;
                 // Form the content URI that represents the specific pet that was clicked on,
                 // by appending the "id" (passed as input to this method) onto the

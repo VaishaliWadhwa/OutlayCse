@@ -95,6 +95,7 @@ public class MiscellaneousActivity extends AppCompatActivity {
 
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
+                dialog.getDatePicker().setMaxDate(System.currentTimeMillis());
 
             }
 

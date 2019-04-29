@@ -21,10 +21,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.vmac.WatBot.com.example.abc.reimbursement.Data.BillContract;
 import com.example.vmac.WatBot.R;
-
-import org.w3c.dom.Text;
+import com.example.vmac.WatBot.com.example.abc.reimbursement.Data.BillContract;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -98,6 +96,7 @@ public class MealActivity extends AppCompatActivity {
                         mDateSetListener,
 
                         year , month , day );
+                dialog.getDatePicker().setMaxDate(System.currentTimeMillis());
 
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();

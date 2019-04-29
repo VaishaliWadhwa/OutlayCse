@@ -125,7 +125,7 @@ public class MealActivity extends AppCompatActivity {
                     d2 = new SimpleDateFormat("dd/MM/yyy").parse(startDate);
                     d1 = new SimpleDateFormat("dd/MM/yyyy").parse(date);
                     d3 = new SimpleDateFormat("dd/MM/yyyy").parse(endDate);
-                    if (d1.after(d3)) {
+                    if (d1.after(d3) || d1.before(d2)) {
                         Toast.makeText(getApplicationContext(), "Insert date properly", Toast.LENGTH_SHORT).show();
 
 

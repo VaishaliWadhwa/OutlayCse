@@ -19,13 +19,17 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.vmac.WatBot.com.example.abc.reimbursement.Data.BillContract;
 import com.example.vmac.WatBot.R;
+import com.example.vmac.WatBot.com.example.abc.reimbursement.Data.BillContract;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class TeamExpenseActivity extends Activity {
 
@@ -40,6 +44,8 @@ public class TeamExpenseActivity extends Activity {
     //EditText finalAmount;
 
     String expenseName;
+    String startDate;
+    String endDate;
     String category;
     String user;
     BillCursorAdapter mCursorAdapter;
@@ -102,7 +108,29 @@ public class TeamExpenseActivity extends Activity {
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month +1;
                 String date = dayOfMonth + "/" + month +"/" + year;
-                mBillDateEditText.setText(date);
+                Date d1 = null;
+                Date d2 = null;
+                Date d3 = null;
+                try {
+                    d2 = new SimpleDateFormat("dd/MM/yyy").parse(startDate);
+                    d1 = new SimpleDateFormat("dd/MM/yyyy").parse(date);
+                    d3 = new SimpleDateFormat("dd/MM/yyyy").parse(endDate);
+                    if (d1.after(d3) || d1.before(d2)) {
+                        Toast.makeText(getApplicationContext(), "Insert date properly", Toast.LENGTH_SHORT).show();
+
+
+                    } else {
+                        mBillDateEditText.setText(date);
+
+
+
+                    }
+
+                } catch (ParseException ex) {
+                }
+
+
+
 
             }
         } ;

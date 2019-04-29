@@ -1,8 +1,8 @@
 package com.example.vmac.WatBot.com.example.abc.reimbursement;
 
 import android.app.DatePickerDialog;
+import android.app.Fragment;
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -10,7 +10,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,8 +19,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.vmac.WatBot.com.example.abc.reimbursement.Data.BillContract;
 import com.example.vmac.WatBot.R;
+import com.example.vmac.WatBot.com.example.abc.reimbursement.Data.BillContract;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -183,8 +182,8 @@ public class LocalTravelTravelFragment extends Fragment {
         ContentValues values = new ContentValues();
         values.put(BillContract.BillEntry.COLUMN_EXPENSE_NAME, expenseName);
         values.put(BillContract.BillEntry.COLUMN_EXPENSE_CAT, category);
-        values.put(BillContract.BillEntry.COLUMN_EXPENSE_FROM, LocalTravel.getTravelFrom());
-        values.put(BillContract.BillEntry.COLUMN_EXPENSE_TO, LocalTravel.getTravelTo());
+        //values.put(BillContract.BillEntry.COLUMN_EXPENSE_FROM, LocalTravel.getTravelFrom());
+        //values.put(BillContract.BillEntry.COLUMN_EXPENSE_TO, LocalTravel.getTravelTo());
 
         values.put(BillContract.BillEntry.COLUMN_EXPENSE_SUBCAT,"Travel");
 

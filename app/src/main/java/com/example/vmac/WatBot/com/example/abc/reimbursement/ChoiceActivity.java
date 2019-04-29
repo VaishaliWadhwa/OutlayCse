@@ -69,7 +69,7 @@ public class ChoiceActivity extends AppCompatDialogFragment {
                     startActivity(intent);
 
                 }
-                if (checkedId==R.id.distanttravel){
+                /*if (checkedId==R.id.distanttravel){
                     Intent intent = new Intent(getActivity(), com.example.vmac.WatBot.com.example.abc.reimbursement.DistantTravel.class);
                     intent.putExtra("category", "Distant Travel");
                     intent.putExtra("expenseName", expenseName);
@@ -79,7 +79,7 @@ public class ChoiceActivity extends AppCompatDialogFragment {
 
                     startActivity(intent);
 
-                }
+                }*/
                 if (checkedId==R.id.teamexpense){
                     Intent intent = new Intent(getActivity(), com.example.vmac.WatBot.com.example.abc.reimbursement.TeamExpenseActivity.class);
                     intent.putExtra("category", "Team Expense");

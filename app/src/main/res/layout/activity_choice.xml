@@ -25,17 +25,11 @@
             android:id="@+id/localtravel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Local Travel"
+            android:text="Travel"
             android:textAppearance="?android:textAppearanceMedium"
             android:layout_marginBottom="8dp"/>
 
-        <RadioButton
-            android:id="@+id/distanttravel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Distant Travel"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:layout_marginBottom="8dp"/>
+
 
         <RadioButton
             android:id="@+id/teamexpense"
